@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/global.css">
+  <link rel="stylesheet" href="../CSS/navbar.css">
+  <link rel="stylesheet" href="../CSS/dashboard_items.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>SvvvInvento</title>
+</head>
+
+<body>
+  <div class="hero-wrapper">
+    <div class="hero">
+      <div class="hero-left">
+        <div class="sidebar">
+          <div class="sidebar-header">
+            <img src="../assets/logo.jpg" alt="">
+            <h2>SvvvInvento</h2>
+          </div>
+          <div class="sidebar-menu">
+            <ul>
+              <li>
+                <a href="#" activeClassName="active" id="hover">Dashboard</a>
+              </li>
+              <li>
+                <a href="../HTML/stock_item_count.html"  activeClassName="active" id="hover">Stock Item Count</a>
+              </li>
+              <li>
+                <a href="../HTML/issued_item_count.html" activeClassName="active" id="hover">Issued Item Count</a>
+              </li>
+              <li>
+                <a href="../HTML/past_item_history.html" activeClassName="active" id="hover">Past Issued History</a>
+              </li>
+              <li>
+                <a href="../HTML/past_discontinued_item_history.html" activeClassName="active" id="hover">Past Discontinued Item History</a>
+              </li>
+              <li>
+                <a href="../HTML/issued_item_form.html" activeClassName="active" id="hover">Issue Item Form</a>
+              </li>
+              <li>
+                <a href="../HTML/add_item.html" activeClassName="active" id="hover">Add Item</a>
+              </li>
+            </ul>
+          </div>
+          <div class="sidebar-profile">
+            <div class="profile-section">
+              <img src="../assets/profile.jpeg" alt="Profile">
+              <span>Aditya Patel</span>
+              <div class="profile-dropdown">
+                <ul>
+                  <li>
+                    <a href="../HTML/about_us.html">About Us</a>
+                  </li>
+                  <li>
+                    <a href="/">Support</a>
+                  </li>
+                  <li>
+                    <a href="../HTML/change_password.html">Change Password</a>
+                  </li>
+                  <li>
+                    <a href="../HTML/admin_profile.html">Admin Profile</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="hero-right">
+        <div class="nav-heading">
+          <h1>Welcome Back, Aditya</h1>
+        </div>
+        <div class="items-wrapper">
+          <div class="item">
+            <div class="icon-container">
+              <div class="icon-wrapper">
+                
+                <i class='bx bx-list-ul'></i>
+              </div>
+            </div>
+            <div class="count">
+              <h1>12 Items</h1>
+            </div>
+            <div class="item-name">
+              <p>Total Item Count</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon-container">
+              <div class="icon-wrapper">
+                <i class='bx bxs-box'></i>
+              </div>
+              <h6>
+                <a href="../HTML/stock_item_count.html">
+                  see more
+                  <i class='bx bx-chevron-right'></i>
+                </a>
+              </h6>
+            </div>
+            <div class="count">
+              <h1>5 Items</h1>
+            </div>
+            <div class="item-name">
+              <p>Stock Item Count</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon-container">
+              <div class="icon-wrapper">
+                <i class='bx bx-list-check'></i>
+              </div>
+              <h6>
+                <a href="../HTML/issued_item_count.html">
+                  see more
+                  <i class='bx bx-chevron-right'></i>
+                </a>
+              </h6>
+            </div>
+            <div class="count">
+              <h1>20 Items</h1>
+            </div>
+            <div class="item-name">
+              <p>Issued Item Count</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon-container">
+              <div class="icon-wrapper">
+                <i class='bx bx-history'></i>
+              </div>
+              <h6>
+                <a href="../HTML/past_issued_history.html">
+                  see more
+                  <i class='bx bx-chevron-right'></i>
+                </a>
+              </h6>
+            </div>
+            <div class="count">
+              <h1>20 Items</h1>
+            </div>
+            <div class="item-name">
+              <p>Past Issued History</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon-container">
+              <div class="icon-wrapper">
+                <i class='bx bxs-message-alt-x'></i>
+              </div>
+              <h6>
+                <a href="../HTML/past_discontinued_item_history.html">
+                  see more
+                  <i class='bx bx-chevron-right'></i>
+                </a>
+              </h6>
+            </div>
+            <div class="count">
+              <h1>3 Items</h1>
+            </div>
+            <div class="item-name">
+              <p>Past Discontinued Item History</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon-container">
+              <div class="icon-wrapper">
+                <i class='bx bx-food-menu'></i>
+              </div>
+              <h6>
+                <a href="../HTML/issued_item_form.html">
+                  see more
+                  <i class='bx bx-chevron-right'></i>
+                </a>
+              </h6>
+            </div>
+            <div class="count">
+              <h1>Form</h1>
+            </div>
+            <div class="item-name">
+              <p>Issue Items To Faculty</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon-container">
+              <div class="icon-wrapper">
+                <i class='bx bxs-message-alt-add'></i>
+              </div>
+              <h6>
+                <a href="../HTML/add_item.html">
+                  see more
+                  <i class='bx bx-chevron-right'></i>
+                </a>
+              </h6>
+            </div>
+            <div class="count">
+              <h1>Form</h1>
+            </div>
+            <div class="item-name">
+              <p>Add Item</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    // sidebar.js
+    document.addEventListener("DOMContentLoaded", function () {
+      // Logic to handle active links
+      const links = document.querySelectorAll(".sidebar-menu a");
+      links.forEach(a => {
+        if (link.href === window.location.href) {
+          link.classList.add("active");
+        }
+      });
+
+      // Logic to handle hover effect
+      const hoverItems = document.querySelectorAll("#hover");
+      hoverItems.forEach(item => {
+        item.addEventListener("mouseenter", function () {
+          this.classList.add("hover-effect");
+        });
+        item.addEventListener("mouseleave", function () {
+          this.classList.remove("hover-effect");
+        });
+      });
+    });
+    
+
+
+
+    function toggleLinkActive(event) {
+  // Get all the links with the 'hover' ID
+  const hoverLinks = document.querySelectorAll('#hover');
+
+  // Remove the active state from all links
+  hoverLinks.forEach((link) => {
+    link.style.backgroundColor = '';
+    link.style.color = '';
+  });
+
+  // Add the active state to the clicked link
+  event.target.style.backgroundColor = '#007bff';
+  event.target.style.color = '#fff';
+}
+
+// Get all the links in the sidebar menu
+const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
+const dashboardLink = document.querySelector('.sidebar-menu a[href="#"]');
+
+// Add event listeners to each link
+sidebarLinks.forEach((link) => {
+  link.addEventListener('click', handleLinkClick);
+});
+
+// Function to handle link clicks
+function handleLinkClick(event) {
+  event.preventDefault();
+
+  // Remove the active class from all links
+  sidebarLinks.forEach((link) => {
+    link.classList.remove('active');
+  });
+
+  // Add the active class to the clicked link
+  event.target.classList.add('active');
+
+  // Navigate to the clicked link
+  window.location.href = event.target.getAttribute('href');
+}
+
+// Set the dashboard link to be active by default
+dashboardLink.classList.add('active');
+    
+
+  </script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+
+</html>

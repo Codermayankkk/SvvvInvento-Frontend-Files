@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/issued_item_form.css">
+    <title>SvvvInvento</title>
+</head>
+
+<body>
+    <div class="hero-wrapper">
+        <div class="hero">
+            <div class="hero-left">
+                <div class="sidebar">
+                    <div class="sidebar-header">
+                        <img src="../assets/logo.jpg" alt="">
+                        <h2>SvvvInvento</h2>
+                    </div>
+                    <div class="sidebar-menu">
+                        <ul>
+                            <li>
+                                <a href="../HTML/dashboard_items.html" id="hover">Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="../HTML/stock_item_count.html" id="hover">Stock Item Count</a>
+                            </li>
+                            <li>
+                                <a href="../HTML/issued_item_count.html" id="hover">Issued Item Count</a>
+                            </li>
+                            <li>
+                                <a href="../HTML/past_issued_history.html" id="hover">Past Issued History</a>
+                            </li>
+                            <li>
+                                <a href="../HTML/past_discontinued_item_history.html" id="hover">Past Discontinued Item
+                                    History</a>
+                            </li>
+                            <li>
+                                <a href="../HTML/issued_item_form.html" id="hover">Issue Item Form</a>
+                            </li>
+                            <li>
+                                <a href="../HTML/add_item.html" id="hover">Add Item</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-profile">
+                        <div class="profile-section">
+                            <img src="../assets/profile.jpeg" alt="Profile">
+                            <span>Aditya Patel</span>
+                            <div class="profile-dropdown">
+                                <ul>
+                                    <li>
+                                        <a href="../HTML/about_us.html">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="/">Support</a>
+                                    </li>
+                                    <li>
+                                        <a href="../HTML/change_password.html">Change Password</a>
+                                    </li>
+                                    <li>
+                                        <a href="../HTML/admin_profile.html">Admin Profile</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="hero-right">
+                <div class="heading">
+                    <h1>Issue Item To Faculty</h1>
+                </div>
+                <div class="form-wrapper">
+                    <div class="form-container">
+                        <label for="name">Faculty Name:</label>
+                        <input type="text" id="name" name="name">
+                        <label for="program">Faculty Enrollment No.:</label>
+                        <input type="number" id="enrollmentno" name="enrollmentno">
+                        <label for="phoneNumber">Faculty Contact No.:</label>
+                        <input type="number" id="phoneNumber" name="phoneNumber">
+                        <label for="details">Faculty Email:</label>
+                        <input type="email" id="email" name="email">
+                        <label for="password">Faculty Branch Name:</label>
+                        <input type="text" id="facultybranchname" name="facultybranchname">
+                        <label for="password">Faculty Department name:</label>
+                        <input type="text" id="facultydepartmentname" name="facultydepartmentname">
+                        <label for="password">Faculty Institute Name:</label>
+                        <input type="text" id="facultyinstitutename" name="facultyinstitutename">
+                        <label for="password">Issue Date:</label>
+                        <input type="date" id="issuedate" name="issuedate">
+                        <label for="password">Return Date:</label>
+                        <input type="date" id="returndate" name="returndate">
+                        <label for="password">Item Name:</label>
+                        <input type="text" id="itemname" name="itemname">
+                        <label for="password">Item Company Name:</label>
+                        <input type="text" id="itemcompanyname" name="itemcompanyname">
+                        <label for="password">Item Svvv No.:</label>
+                        <input type="text" id="itemsvvvno." name="itemsvvvno.">
+                        <label for="password">Item Serial No.:</label>
+                        <input type="text" id="itemserialno." name="itemserialno.">
+                        <label for="password">Remark:</label>
+                        <input type="text" readonly style="outline: none;" id="remark" name="remark">
+                        <button id="add-detail-btn">Add</button>
+
+                    </div>
+                </div>
+
+                <div class="popup-overlay" style="display: none;">
+                    <div class="popup">
+                        <h2 style="display: none;">Item Issued To Faculty Successfully</h2> <br>
+                        <button style="display: none;" onclick="location.href='../HTML/issued_item_count.html'">View</button>
+                        <div id="otp-container" style="display: none;">
+                            <input class="input" style="height: 15px; font-size: 20px;" type="text" placeholder="Enter OTP" id="otp-input"> <br> <br>
+                            <button id="verify-btn" style="display: none;">Verify</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            const addBtn = document.getElementById('add-detail-btn');
+const adminProfileContainer = document.querySelector('.form-wrapper');
+
+const updateModal = document.querySelector('.popup-overlay');
+const viewBtn = updateModal.querySelector('.popup-overlay button');
+const successMsg = updateModal.querySelector('.popup-overlay h2');
+const otpContainer = updateModal.querySelector('#otp-container');
+const otpInput = updateModal.querySelector('#otp-input');
+const verifyBtn = updateModal.querySelector('#verify-btn');
+
+addBtn.addEventListener('click', showOTPInput);
+
+function showOTPInput() {
+    updateModal.style.display = 'flex';
+    updateModal.style.justifyContent = 'center';
+    updateModal.style.alignItems = 'center';
+    otpContainer.style.display = 'block';
+    verifyBtn.style.display = 'inline-block';
+}
+
+function hideUpdateModal() {
+    updateModal.style.display = 'none';
+    otpContainer.style.display = 'none';
+    verifyBtn.style.display = 'none';
+    otpInput.value = '';
+}
+
+function showSuccessMessage() {
+    const successMessage = updateModal.querySelector('h2');
+    successMessage.textContent = 'Item Issued To Faculty Successfully';
+    successMsg.style.display = 'inline-block';
+    viewBtn.style.display = 'inline-block';
+}
+
+verifyBtn.addEventListener('click', () => {
+    const enteredOTP = otpInput.value;
+    if (enteredOTP === '1212') {
+        showSuccessMessage();
+        otpContainer.style.display = 'none';
+        verifyBtn.style.display = 'none';
+    } else {
+        alert('Invalid OTP. Please try again.');
+    }
+});
+
+viewBtn.addEventListener('click', hideUpdateModal);
+
+// Get all the links in the sidebar menu
+const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
+const dashboardLink = document.querySelector('.sidebar-menu a[href="../HTML/issued_item_form.html"]');
+
+// Add event listeners to each link
+sidebarLinks.forEach((link) => {
+    link.addEventListener('click', handleLinkClick);
+});
+
+// Function to handle link clicks
+function handleLinkClick(event) {
+    event.preventDefault();
+
+    // Remove the active class from all links
+    sidebarLinks.forEach((link) => {
+        link.classList.remove('active');
+    });
+
+    // Add the active class to the clicked link
+    event.target.classList.add('active');
+
+    // Navigate to the clicked link
+    window.location.href = event.target.getAttribute('href');
+}
+
+// Set the dashboard link to be active by default
+dashboardLink.classList.add('active');
+
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/global.css">
+  <link rel="stylesheet" href="../CSS/navbar.css">
+  <link rel="stylesheet" href="../CSS/past_discontinued_more_info.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>SvvvInvento</title>
+</head>
+
+<body>
+  <div class="hero-wrapper">
+    <div class="hero">
+      <div class="hero-left">
+        <div class="sidebar">
+          <div class="sidebar-header">
+            <img src="../assets/logo.jpg" alt="">
+            <h2>SvvvInvento</h2>
+          </div>
+          <div class="sidebar-menu">
+            <ul>
+              <li>
+                <a href="#" id="hover">Dashboard</a>
+              </li>
+              <li>
+                <a href="../HTML/stock_item_count.html" id="hover">Stock Item Count</a>
+              </li>
+              <li>
+                <a href="../HTML/issued_item_count.html" id="hover">Issued Item Count</a>
+              </li>
+              <li>
+                <a href="../HTML/past_issued_history.html" id="hover">Past Issued History</a>
+              </li>
+              <li>
+                <a href="../HTML/past_discontinued_item_history.html" id="hover">Past Discontinued Item History</a>
+              </li>
+              <li>
+                <a href="../HTML/issued_item_form.html" id="hover">Issue Item Form</a>
+              </li>
+              <li>
+                <a href="../HTML/add_item.html" id="hover">Add Item</a>
+              </li>
+            </ul>
+          </div>
+          <div class="sidebar-profile">
+            <div class="profile-section">
+              <img src="../assets/profile.jpeg" alt="Profile">
+              <span>Aditya Patel</span>
+              <div class="profile-dropdown">
+                <ul>
+                  <li>
+                    <a href="../HTML/about_us.html">About Us</a>
+                  </li>
+                  <li>
+                    <a href="/">Support</a>
+                  </li>
+                  <li>
+                    <a href="../HTML/change_password.html">Change Password</a>
+                  </li>
+                  <li>
+                    <a href="../HTML/admin_profile.html">Admin Profile</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        
+      </div>
+      <div class="hero-right">
+        <div class="item-info-heading">
+            <a href="../HTML/past_discontinued_item_history.html">
+                <i class='bx bx-arrow-back'></i>
+            </a>
+            <h1>Past Discontinued Item Information</h1>
+          </div>
+          <div class="item-info-wrapper">
+            <div class="item-info-container">
+              <div class="input-group">
+                <div class="input-row">
+                  <label>Item Name:</label>
+                  <input type="text" value="Laptop" readonly>
+                </div>
+                <div class="input-row">
+                  <label>Item Company Name:</label>
+                  <input type="text" value="Dell" readonly>
+                </div>
+                <div class="input-row">
+                  <label>Serial No.:</label>
+                  <input type="text" value="202020" readonly>
+                </div>
+                <div class="input-row">
+                  <label>SVVV Code No.:</label>
+                  <input type="text" value="2024SVVVCSE101" readonly>
+                </div>
+                <div class="input-row">
+                  <label>Issue Date:</label>
+                  <input type="date" value="2024-04-08" readonly>
+                </div>
+                <div class="input-row">
+                  <label>Discard Date:</label>
+                  <input type="date" value="2024-04-08" readonly>
+                </div>
+                <div class="input-row">
+                  <label>Admin Name:</label>
+                  <input type="text" value="Alex Choudhary" readonly>
+                </div>
+                <div class="input-row">
+                  <label>Admin Email:</label>
+                  <input type="email" value="alex@email.com" readonly>
+                </div>
+                <div class="input-row">
+                  <label>Admin Contact No.:</label>
+                  <input type="number" value="9551623212" readonly>
+                </div>
+                <div class="input-row">
+                  <label>Admin Department Name:</label>
+                  <input type="text" value="Btech (CSE)" readonly>
+                </div>
+                <div class="input-row">
+                  <label>Admin Branch Name:</label>
+                  <input type="text" value="Computer Science & Engineering" readonly>
+                </div>
+                <div class="input-row">
+                  <label>Admin Institute Name:</label>
+                  <input type="text" value="Shri Vaishnav Institute Of Information Technology" readonly>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    // sidebar.js
+    document.addEventListener("DOMContentLoaded", function () {
+      // Logic to handle active links
+      const links = document.querySelectorAll(".sidebar-menu a");
+      links.forEach(a => {
+        if (link.href === window.location.href) {
+          link.classList.add("active");
+        }
+      });
+
+      // Logic to handle hover effect
+      const hoverItems = document.querySelectorAll("#hover");
+      hoverItems.forEach(item => {
+        item.addEventListener("mouseenter", function () {
+          this.classList.add("hover-effect");
+        });
+        item.addEventListener("mouseleave", function () {
+          this.classList.remove("hover-effect");
+        });
+      });
+    });
+
+
+    </script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+
+</html>

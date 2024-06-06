@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/add_item.css">
+    <title>SvvvInvento</title>
+</head>
+
+<body>
+    <div class="hero-wrapper">
+        <div class="hero">
+            <div class="hero-left">
+                <div class="sidebar">
+                    <div class="sidebar-header">
+                        <img src="../assets/logo.jpg" alt="">
+                        <h2>SvvvInvento</h2>
+                    </div>
+                    <div class="sidebar-menu">
+                        <ul>
+                            <li>
+                                <a href="../HTML/dashboard_items.html" id="hover">Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="../HTML/stock_item_count.html" id="hover">Stock Item Count</a>
+                            </li>
+                            <li>
+                                <a href="../HTML/issued_item_count.html" id="hover">Issued Item Count</a>
+                            </li>
+                            <li>
+                                <a href="../HTML/past_issued_history.html" id="hover">Past Issued History</a>
+                            </li>
+                            <li>
+                                <a href="../HTML/past_discontinued_item_history.html" id="hover">Past Discontinued Item
+                                    History</a>
+                            </li>
+                            <li>
+                                <a href="../HTML/issued_item_form.html" id="hover">Issue Item Form</a>
+                            </li>
+                            <li>
+                                <a href="../HTML/add_item.html" id="hover">Add Item</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-profile">
+                        <div class="profile-section">
+                            <img src="../assets/profile.jpeg" alt="Profile">
+                            <span>Aditya Patel</span>
+                            <div class="profile-dropdown">
+                                <ul>
+                                    <li>
+                                        <a href="../HTML/about_us.html">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="/">Support</a>
+                                    </li>
+                                    <li>
+                                        <a href="../HTML/change_password.html">Change Password</a>
+                                    </li>
+                                    <li>
+                                        <a href="../HTML/admin_profile.html">Admin Profile</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="hero-right">
+                <div class="heading">
+                    <h1>Add Item</h1>
+                    <input type="file" name="file" id="file" class="inputfile">
+                    <label for="file">
+                        <i class="fa fa-upload"></i> Import Excel File
+                    </label>
+                </div>
+                <div class="form-wrapper">
+                    <div id="form-container">
+                        <label for="password">Item Name:</label>
+                        <input type="text" id="itemname" name="itemname">
+                        <label for="password">Item Company Name:</label>
+                        <input type="text" id="itemcompanyname" name="itemcompanyname">
+                        <label for="password">Item Serial No.:</label>
+                        <input type="text" id="itemserialno." name="itemserialno.">
+                        <label for="password">Item Svvv No.:</label>
+                        <input type="text" id="itemsvvvno." name="itemsvvvno.">
+                        <label for="password">Issue Date:</label>
+                        <input type="date" id="issuedate" name="issuedate">
+                        <label for="name">Admin Name:</label>
+                        <input type="text" id="name" name="name">
+                        <label for="phoneNumber">Admin Contact No.:</label>
+                        <input type="number" id="phoneNumber" name="phoneNumber">
+                        <label for="details">Admin Email:</label>
+                        <input type="email" id="email" name="email">
+                        <label for="password">Admin Department name:</label>
+                        <input type="text" id="facultydepartmentname" name="facultydepartmentname">
+                        <label for="password">Admin Branch Name:</label>
+                        <input type="text" id="facultybranchname" name="facultybranchname">
+                        <label for="password">Admin Institute Name:</label>
+                        <input type="text" id="facultyinstitutename" name="facultyinstitutename">
+                        <button id="add-detail-btn">Add</button>
+                    </div>
+                </div>
+
+                <div class="popup-overlay" style="display: none;">
+                    <div class="popup">
+                        <h2>Item Added Successfully</h2>
+                        <button onclick="location.href='../HTML/stock_item_count.html'">View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+const updateBtn = document.getElementById('add-detail-btn');
+const adminProfileContainer = document.querySelector('.aform-wrapper');
+
+const updateModal = document.querySelector('.popup-overlay');
+const viewBtn = updateModal.querySelector('.popup-overlay button');
+
+updateBtn.addEventListener('click', showUpdateModal);
+
+function showUpdateModal() {
+  updateModal.style.display = 'flex';
+  updateModal.style.justifyContent = 'center';
+  updateModal.style.alignItems = 'center';
+}
+
+function hideUpdateModal() {
+  updateModal.style.display = 'none';
+}
+
+viewBtn.addEventListener('click', hideUpdateModal);
+
+
+
+
+// Get all the links in the sidebar menu
+const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
+const dashboardLink = document.querySelector('.sidebar-menu a[href="../HTML/add_item.html"]');
+
+// Add event listeners to each link
+sidebarLinks.forEach((link) => {
+  link.addEventListener('click', handleLinkClick);
+});
+
+// Function to handle link clicks
+function handleLinkClick(event) {
+  event.preventDefault();
+
+  // Remove the active class from all links
+  sidebarLinks.forEach((link) => {
+    link.classList.remove('active');
+  });
+
+  // Add the active class to the clicked link
+  event.target.classList.add('active');
+
+  // Navigate to the clicked link
+  window.location.href = event.target.getAttribute('href');
+}
+
+// Set the dashboard link to be active by default
+dashboardLink.classList.add('active');
+        </script>
+</body>
+
+</html>

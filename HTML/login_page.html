@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/login_page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>SvvvInvento</title>
+</head>
+<body>
+    <div class="login-page">
+        <div class="login">
+          <div class="login-left">
+            <div class="welcome-heading">
+              <h1>Welcome To SvvvInvento</h1>
+            </div>
+            <div class="img-wrapper">
+              <img src="../assets/loginimg.svg" alt="" />
+            </div>
+          </div>
+          <div class="login-right">
+            <div class="login-container">
+              <h2>Login</h2>
+              <form>
+                <div class="form-group">
+                  <label>Email:</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Enter email"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Password:</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Enter password"
+                  />
+                </div>
+                <div class="captcha-group">
+                  <label>CAPTCHA : <span id="captcha"></span></label>
+                  <i class="fa-solid fa-rotate" id="reload-captcha"></i>
+                </div>
+                <div class="form-group">
+                  <label>Enter CAPTCHA:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter captcha"
+                  />
+                </div>
+                <button
+                  type="button"
+                  class="login-button"
+                  onclick="location.href='../HTML/dashboard_items.html'">
+                  Login
+                </button>
+                <p class="forgot-passwd-link"><a href="../HTML/forgot_passwd.html">Forgot Password ?</a></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script>
+        // Generate random captcha
+        function generateCaptcha() {
+            const captchaLength = 6; // Change as needed
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let captcha = '';
+            for (let i = 0; i < captchaLength; i++) {
+                captcha += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return captcha;
+        }
+
+        // Update captcha in the HTML
+        function updateCaptcha() {
+            const captchaSpan = document.getElementById('captcha');
+            const captchaInput = document.querySelector('.form-group input[type="text"]');
+            captchaInput.value = ''; // Clear previous input
+            const newCaptcha = generateCaptcha();
+            captchaSpan.textContent = newCaptcha;
+            return newCaptcha;
+        }
+
+        // Disable login button until captcha matches
+        function validateCaptcha() {
+            const loginButton = document.querySelector('.login-button');
+            const captchaInput = document.querySelector('.form-group input[type="text"]');
+            const captchaSpan = document.getElementById('captcha');
+            
+            if (captchaInput.value === captchaSpan.textContent) {
+                loginButton.removeAttribute('disabled');
+            } else {
+                loginButton.setAttribute('disabled', 'disabled');
+            }
+        }
+
+        // Reload captcha and validate on page load
+        window.onload = function() {
+            const newCaptcha = updateCaptcha();
+            const captchaInput = document.querySelector('.form-group input[type="text"]');
+            captchaInput.addEventListener('input', validateCaptcha);
+        }
+
+        // Reload captcha on span click
+        document.getElementById('reload-captcha').addEventListener('click', function() {
+            updateCaptcha();
+            validateCaptcha(); // Validate after updating captcha
+        });
+    </script>
+</body>
+</html>

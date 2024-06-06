@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/forgot_passwd.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>SvvvInvento</title>
+</head>
+<body>
+    <div class="forgot-page">
+        <div class="forgot">
+            <div class="forgot-left">
+                <div class="forgot-heading">
+                    <h1>Forgot Your Password</h1>
+                </div>
+                <div class="img-wrapper">
+                    <img src="../assets/forgotpasswd.svg" alt="" />
+                </div>
+            </div>
+            <div class="forgot-right">
+                <div class="forgot-container">
+                    <h2>Forgot Password</h2>
+                    <form id="forgotPasswordForm">
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input type="email" class="form-control" placeholder="Enter email" id="emailInput" />
+                        </div>
+                        <button type="button" class="forgot-pg-btn" id="otpButton">Generate OTP</button>
+                        <div id="otpContainer" style="display: none;">
+                            <div class="form-group">
+                                <label>Enter OTP:</label>
+                                <input type="text" class="form-control" placeholder="Enter OTP" id="otpInput" />
+                            </div>
+                            <button type="button" class="forgot-pg-btn" id="verifyButton">Verify</button>
+                        </div>
+                        <div id="passwordContainer" style="display: none;">
+                            <div class="form-group">
+                                <label>New Password:</label>
+                                <input type="password" class="form-control" placeholder="Enter new password" id="newPasswordInput" />
+                            </div>
+                            <div class="form-group">
+                                <label>Confirm Password:</label>
+                                <input type="password" class="form-control" placeholder="Confirm new password" id="confirmPasswordInput" />
+                            </div>
+                            <button type="submit" class="forgot-pg-btn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const otpButton = document.getElementById('otpButton');
+        const otpContainer = document.getElementById('otpContainer');
+        const verifyButton = document.getElementById('verifyButton');
+        const passwordContainer = document.getElementById('passwordContainer');
+
+        otpButton.addEventListener('click', () => {
+        otpButton.style.display = 'none';
+        otpContainer.style.display = 'block';
+    
+});
+
+        verifyButton.addEventListener('click', () => {
+            
+            const enteredOTP = otpInput.value;
+    if (enteredOTP === '1212') {
+            otpContainer.style.display = 'none';
+            passwordContainer.style.display = 'block';
+        }
+    else {
+        alert('Invalid OTP. Please try again.');
+    }
+        });
+    </script>
+</body>
+</html>
